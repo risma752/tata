@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hospital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+  html{
+    scroll-behavior: smooth;
+  }
+  body {
+    background: url('background.jpg') no-repeat center center/cover;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.8); /* Transparan */
+    border-radius: 15px; /* Bikin kotak rounded */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    top: -40px;
+}
+
+.info-box:hover {
+    transform: translateY(-5px); /* Efek hover naik sedikit */
+}
+
+.info-box i {
+    font-size: 40px;
+    color: #007bff; /* Warna ikon */
+    margin-bottom: 10px;
+}
+
+
+/* Style untuk About Us Section */
+.about-us {
+    background-color: #f8f9fa; /* Warna abu-abu terang seperti di gambar */
+    padding: 60px 0;
+}
+
+.about-box{
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgb(0,0,0,0.1); 
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.about-image {
+    max-width: 70%; /* Atur ukuran maksimal gambar */
+    height: auto; /* Pastikan proporsi tetap */
+    object-fit: contain; /* Menjaga kualitas gambar */
+    border-radius: 10px; /* Tambahkan sudut membulat */
+    border-radius: 10px; /* Supaya sudut gambar agak melengkung */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+}
+
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
+.card {
+            width: 250px;
+            height: 380px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #fff;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            height: 160px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .card-body {
+            padding: 15px;
+            text-align: center;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .card-text {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 3px;
+        }
+        .text-highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .feature-icon {
+      font-size: 2.5rem;
+      color: #00a0b4;
+      margin-bottom: 15px;
+    }
+    .feature-box {
+      text-align: center;
+      padding: 20px;
+    }
+    .feature-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .feature-text {
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+
+    .card-custom {
+      position: relative;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 250px;
+      color: white;
+    }
+    .card-custom img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4); /* semi transparan */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+    .card-overlay h5 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    .card-overlay a {
+      color: #fff;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .subtitle {
+      color: #6c757d;
+      font-size: 1rem;
+    }
+
+
+    .carousel-wrapper {
+      position: relative;
+    }
+
+    .scrolling-wrapper {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+      scroll-behavior: smooth;
+    }
+
+    .scrolling-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-card {
+      flex: 0 0 auto;
+      width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
+      background: white;
+    }
+
+    .carousel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .carousel-card img {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 150px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.9);
+      border: none;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .carousel-nav-left {
+      left: -10px;
+    }
+
+    .carousel-nav-right {
+      right: -10px;
+    }
+</style>
+<body>
+    <!--navigasi-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+            <img alt="logo" class="h-10" height="50" src="logo.png" width="100"/>
+          <a class="navbar-brand" href="#"> rumah sakitpondok indah </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href=""#carouselExampleCaptions>Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#doctors">Doctors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#footer">Contant</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+  
+
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="galley8.jpg" class="d-block w-100" alt="gallery-4.jpg">
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p></p>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden"></span>
+        </button>
+      </div>
+<!--about us-->
+<!-- About Us Section -->
+<section id="about" class="about-us py-5">
+
+       <!--crad-->
+<div class="container">
+  <h2 class="text-center text-white mt-5">Azmir Hospital</h2>
+  <div class="row justify-content-center">
+      <div class="col-md-3">
+          <div class="info-box">
+              <i class="fas fa-clock"></i>
+              <h5>24 Hour Service</h5>
+              <p>Service 7 days a week with professional doctors and nurses</p>
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="info-box">
+              <i class="fas fa-user-md"></i>
+              <h5>Medical Personnel</h5>
+              <p>Supported by trained, experienced.</p>
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="info-box">
+              <i class="fas fa-hospital"></i>
+              <h5>Unit UGD</h5>
+              <p>Emergency medical services for both trauma and non-trauma.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <div class="about-box mt-4">
+        <div class="row align-items-center">
+            <!-- Text Content -->
+            <div class="col-lg-6">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-text">
+                  VELiyya Hospital is a modern hospital committed to providing the best healthcare services to the community. With advanced facilities 
+                  and professional medical personnel, we are ready to serve patients with full dedication and care. 
+                </p>
+                <p class="section-text">
+                    Since its establishment, Eelyyaa Hospital has been the first choice for patients seeking quality care.
+                </p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+            <!-- Image -->
+            <div class="col-lg-6 d-flex justify-content-center">
+                <img src="about.jpg" alt="about.jpg" class="img-fluid rounded about-image">
+            </div>
+        </div>
+    </div>
+    </div><br>
+
+  <!--crad-->
+    <div id="doctors" class="container mt-5 text-center">
+      <h2 class="mb-3">Doctors</h2>
+      <p class="text-muted">Our Specialties</p>
+      <div class="row justify-content-center gap-3">
+          
+          <!-- Dokter 1 -->
+          <div class="col-md-3">
+              <div class="card">
+                  <img src="doctor-2.jpg" class="card-img-top" alt="doctors1.jpg">
+                  <div class="card-body">
+                      <h5 class="card-title">Dr. John Doe</h5>
+                      <p class="card-text text-highlight">Spesialis: Kardiologi</p>
+                      <p class="card-text">Jam Praktek: 08:00 - 14:00</p>
+                      <p class="card-text">Ruang: 101</p><br>
+                      <a href="#" class="btn btn-primary">Read More</a>
+                  </div>
+              </div>
+          </div>
+    
+          <!-- Dokter 2 -->
+          <div class="col-md-3">
+              <div class="card">
+                  <img src="doctor-4.jpg" class="card-img-top" alt="doctors3.jpg">
+                  <div class="card-body">
+                      <h5 class="card-title">Dr. calista</h5>
+                      <p class="card-text text-highlight">Spesialis: Gastroenterologi</p>
+                      <p class="card-text">Jam Praktek: 09:00 - 15:00</p>
+                      <p class="card-text">Ruang: 202</p><br>
+                      <a href="#" class="btn btn-primary">Read More</a>
+                  </div>
+              </div>
+          </div>
+    
+          <!-- Dokter 3 -->
+          <div class="col-md-3">
+              <div class="card">
+                  <img src="doctor-3.jpg" class="card-img-top" alt="doctors2.jpg">
+                  <div class="card-body">
+                      <h5 class="card-title">Dr. Jessica Doe</h5>
+                      <p class="card-text text-highlight">Spesialis: Pulmonologi</p>
+                      <p class="card-text">Jam Praktek: 10:00 - 16:00</p>
+                      <p class="card-text">Ruang: 303</p><br>
+                      <a href="#" class="btn btn-primary">Read More</a>
+                  </div>
+              </div>
+          </div>
+    
+      </div>
+    </div><br>
+
+    <!--departement-->
+    <div id="departement" class="container text-center my-5">
+      <h3 class="mb-2">Departement</h3>
+      <p class="mb-4 text-muted">Medical Clinic WordPress theme was created to offer a perfect solution for medical websites.</p>
+  
+      <div class="row justify-content-center">
+        <!-- Feature 1 -->
+        <div class="col-md-3 col-sm-6 feature-box">
+          <div class="feature-icon">
+            <i class="fas fa-notes-medical"></i>
+          </div>
+          <div class="feature-title">Medical Treatment</div>
+          <div class="feature-text">Cura medicis volutpat proin ac magna sed elementum bibendum.</div>
+        </div>
+  
+        <!-- Feature 2 -->
+        <div class="col-md-3 col-sm-6 feature-box">
+          <div class="feature-icon">
+            <i class="fas fa-briefcase-medical"></i>
+          </div>
+          <div class="feature-title">Emergency Help</div>
+          <div class="feature-text">Cura senectus volutpat proin ac magna sed elementum bibendum.</div>
+        </div>
+  
+        <!-- Feature 3 -->
+        <div class="col-md-3 col-sm-6 feature-box">
+          <div class="feature-icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <div class="feature-title">Medical Professionals</div>
+          <div class="feature-text">Cura volutpat magna sed elementum sit amet lorem bibendum.</div>
+        </div>
+  
+        <!-- Feature 4 -->
+        <div class="col-md-3 col-sm-6 feature-box">
+          <div class="feature-icon">
+            <i class="fas fa-stethoscope"></i>
+          </div>
+          <div class="feature-title">Qualified Doctors</div>
+          <div class="feature-text">Cura malesuada convallis ac magna sed elementum volutpat.</div>
+        </div>
+      </div>
+    </div>
+
+<!--card part  2-->
+<div class="container py-5">
+  <h4 class="mb-4">Center of Excellence</h4>
+  <div class="carousel-wrapper">
+    <button class="carousel-nav carousel-nav-left" onclick="scrollCarousel(-1)">&lt;</button>
+    <div class="scrolling-wrapper" id="carouselScroll">
+      
+      <!-- Card 1 -->
+      <div class="carousel-card">
+        <img src="dokter kecantikan.jpg" alt="dokter kecantikan.jpg">
+        <div class="p-3">
+          <h6 class="fw-bold mb-1">Skin & Aesthetic</h6>
+          <p class="text-muted small mb-0">Facial skin care and various facial problems.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="carousel-card">
+        <img src="patah tulang.jpg" alt="patah tulang.jpg">
+        <div class="p-3">
+          <h6 class="fw-bold mb-1">Orthopedic Centre</h6>
+          <p class="text-muted small mb-0">Specialist in leg and spine bones.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="carousel-card">
+        <img src="kandungan.jpg" alt="kandungan.jpg">
+        <div class="p-3">
+          <h6 class="fw-bold mb-1">Obstetrics & Gynecology</h6>
+          <p class="text-muted small mb-0">Pregnancy services and problems of pregnant women.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="carousel-card">
+        <img src="Diabetes-Tipe-1.jpg" alt="Diabetes-Tipe-1.jpg">
+        <div class="p-3">
+          <h6 class="fw-bold mb-1">prevention of diabetes</h6>
+          <p class="text-muted small mb-0">How to prevent diabetes and what to do</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="carousel-card">
+        <img src="paru.jpg" alt="paru.jpg">
+        <div class="p-3">
+          <h6 class="fw-bold mb-1">Spesialis paru paru</h6>
+          <p class="text-muted small mb-0">What lung treatments should be avoided?</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="carousel-card">
+        <img src="jantung.jpg" alt="jantug.jpg">
+        <div class="p-3">
+          <h6 class="fw-bold mb-1">Heart Center</h6>
+          <p class="text-muted small mb-0">Complete cardiac examination.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-nav carousel-nav-right" onclick="scrollCarousel(1)">&gt;</button>
+  </div>
+</div><br>
+
+
+<!--janji temu-->
+<div class="container my-5">
+  <div class="row align-items-start">
+    <!-- Kiri: Teks -->
+    <div class="col-md-4">
+      <div class="title">Have you made an appointment ?</div>
+      <p class="subtitle">Things you can do to make your visit easier.</p>
+    </div>
+
+    <!-- Kanan: Kartu-kartu dengan overlay -->
+    <div class="col-md-8">
+      <div class="row g-4">
+        <!-- Kartu 1 -->
+        <div class="col-md-6">
+          <div class="card-custom">
+            <img src="service.jpg" alt="services.jpg">
+            <div class="card-overlay">
+              <h5>Download MySiloam Application</h5>
+              <a href="#">Learn MySiloam Application →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Kartu 2 -->
+        <div class="col-md-6">
+          <div class="card-custom">
+            <img src="" alt="doter.png.jpg">
+            <div class="card-overlay">
+              <h5>Manage Appointments</h5>
+              <a href="#">Manage Appointments →</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+</section>
+
+<!--footer-->
+<footer id="footer" class="bg-light text-dark pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+
+      <!-- Kolom 1 -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">OUR HOSPITAL</h6>
+        <ul class="list-unstyled">
+          <li><strong>Azmir Hospital - pondok indah</strong></li>
+          <li><strong>Azmir Hospital - jalan Jaya</strong></li>
+        </ul>
+      </div>
+
+      <!-- Kolom 2 -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">VISITOR AND PATIENT INFORMATION</h6>
+        <ul class="list-unstyled">
+          <li>Our Efforts to Keep You Safe</li>
+          <li>Telemedicine VELiyya Hospital Group</li>
+          <li> Azmir Mobile</li>
+          <li>Rules & Visiting Hours</li>
+          <li>Payment Administration</li>
+          <li>Partner Insurance Company</li>
+          <li>Patient Relations</li>
+          <li>Hospital Directoryt</li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3 -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">OUR COMPANY</h6>
+        <ul class="list-unstyled">
+          <li>Terms and Conditions</li>
+          <li>About Us</li>
+          <li>Privacy Policy</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+
+      <!-- Kolom 4: Sosial & Aplikasi -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">FOLLOW ME</h6>
+        <div class="mb-2">
+          <a href="#"><i class="bi bi-facebook me-2"></i></a>
+          <a href="#"><i class="bi bi-twitter-x me-2"></i></a>
+          <a href="#"><i class="bi bi-youtube me-2"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+
+        <h6 class="fw-bold mt-4">GET Azmir MOBILE APP</h6>
+        <div class="d-flex gap-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" height="40" alt="Google Play">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="40" alt="App Store">
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <h6 class="fw-bold text-primary">GET THE LATEST NEWS FROM Azmir Hospital</h6> 
+        <p class="text-muted">Register your e-mail to subscribe to the newsletter and get the latest information from VELiyya Hospital Group.</p>
+        <form class="d-flex">
+          <input type="email" class="form-control me-2" placeholder="Masukkan alamat email">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function scrollCarousel(direction) {
+    const container = document.getElementById('carouselScroll');
+    const scrollAmount = 280;
+    container.scrollBy({
+      left: scrollAmount * direction,
+      behavior: 'smooth'
+    });
+  }
+</script>
+</body>
+</html>
